@@ -5,8 +5,8 @@ import { User } from "../models/Schemas.js";
 
 export const getAllUsers = async (req, res) => {
  try {
-   const users = await User.find().populate('messages');
-   res.json(users);
+   const users = await User.find().populate('messages', '_id');
+   res.status(200).json(users);
  } catch(err) {
    res.status(500).json({error: err.message})
  }
@@ -41,10 +41,10 @@ export const getSingleUser = async (req, res) => {
 export const getAllMsgFromUser = async (req, res) => {
   try {
     const { id } = req.params;
-    const user = await User.findById(id);
+    const user = await User.findById(id).populate('messages');
     if (!user) return res.status(404).json({ message: `User with id ${id} not found` });
     const messages = user.messages;
-    res.json(user.messages);
+    res.json(messages);
   } catch(err) {
     res.status(500).json({ error: err.message })
   }

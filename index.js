@@ -3,10 +3,18 @@ import morgan from 'morgan';
 import cors from 'cors';
 import 'dotenv/config.js';
 import './db/database.js';
+// built-in module of NodeJS
+import path from 'path';
+// Wenn ich zu URL-Path Zugang haben will in ES6 (s.u. const __dirname = ...), 
+// muss ich hier built-in module of NodeJS importieren
+import url from 'url';
 
 /* routes */
 import userRouter from './routes/users.js';
 import messageRouter from './routes/messages.js';
+
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+const publicDir = path.join(__dirname, 'public');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -15,12 +23,12 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev')); 
 }
 app.use(cors({ origin: '*', credentials: true}))
-
 app.use(express.json());
 
 /* middlewares */
 app.use('/users', userRouter);
 app.use('/messages', messageRouter);
-// app.use('/', (req, res) => {res.json('Here later API Description HTML')})
+
+app.use('/', (req, res) => res.sendFile('index.html', { root: publicDir }));
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

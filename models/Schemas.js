@@ -8,7 +8,7 @@ const messageSchema = new Schema( {
   text: { type: String, required: true },
   date: { type: Date, default: Date.now },
   image: { type: String, required: true }
-});
+},{ versionKey: false });
 
 const userSchema = new Schema({
   _id: Schema.Types.ObjectId,
@@ -16,7 +16,7 @@ const userSchema = new Schema({
   email: { type: String, required: true },
   password: { type: String, required: true, select: false },
   messages: [{ type: Schema.Types.ObjectId, ref: 'Message'}]
-});
+},{ versionKey: false });
 
 export const User = model('User', userSchema);
 export const Message = model('Message', messageSchema);
