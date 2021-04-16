@@ -39,7 +39,6 @@ export const createNewMessage = async (req, res)=> {
         // When create new message, I have to update the messages array of the user with certain _id: newMessage.author
         // findOneAndUpdate() https://mongoosejs.com/docs/tutorials/findoneandupdate.html
         // Update Operators: https://docs.mongodb.com/manual/reference/operator/update/
-        // 
         const updateUser = await User.findOneAndUpdate({ _id: newMessage.author }, {"$push": { "messages": newMessage._id}}  );
         console.log(updateUser);
         res.status(201).json(newMessage);
