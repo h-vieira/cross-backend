@@ -184,11 +184,13 @@ pre code {
   {
     "_id": "6078530e649f3a3804a13763",
     "name": "....",
-    "email": "...."
+    "email": "....",
+    "messages": [Array of messages _id]
   },{
     "_id": "6078530e649f3a3804a13761",
     "name": "....",
-    "email": "...."
+    "email": "....",
+    "messages": [Array of messages _id]
   }
 ]
 </code></pre></div></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="users__post"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent">/users</span>/</h4></div><div class="modal-body"><div class="alert alert-info"><p>Create an user</p></div><ul class="nav nav-tabs"><li class="active"><a href="#users__post_request" data-toggle="tab">Request</a></li></ul><div class="tab-content"><div class="tab-pane active" id="users__post_request"><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>:</p><pre><code>
@@ -201,13 +203,14 @@ pre code {
   "_id": "6078530e649f3a3804a13763",
   "name": "....",
   "email": "....",
+  "messages": [Array of messages _id]
 }
 </code></pre></div></div></div></div></div></div></div></div><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_users__id__messages"><span class="parent">/users/{id}</span>/messages</a> <span class="methods"><a href="#users__id__messages_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_users__id__messages" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#users__id__messages_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Retrieve all the messages for a specific user</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="users__id__messages_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/users/{id}</span>/messages</h4></div><div class="modal-body"><div class="alert alert-info"><p>Retrieve all the messages for a specific user</p></div><ul class="nav nav-tabs"><li class="active"><a href="#users__id__messages_get_request" data-toggle="tab">Request</a></li><li><a href="#users__id__messages_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="users__id__messages_get_request"><h3>URI Parameters</h3><ul><li><strong>id</strong>: <em><span class="required">required</span>(string)</em></li></ul></div><div class="tab-pane" id="users__id__messages_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: any</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[
   {
     "_id": "6078530e649f3a3804a13763",
     "name": "....",
     "email": "....",
-    "messages": [_idArticle1,_idArticle2 ...]
+    "messages": [Array of messages _id]
   }
 ]
 </code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="messages" class="panel-title">/messages</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_messages_"><span class="parent">/messages</span>/</a> <span class="methods"><a href="#messages__get"><span class="badge badge_get">get</span></a> <a href="#messages__post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_messages_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#messages__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Retrieve all the messages</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#messages__post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Create a message</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="messages__get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/messages</span>/</h4></div><div class="modal-body"><div class="alert alert-info"><p>Retrieve all the messages</p></div><ul class="nav nav-tabs"><li class="active"><a href="#messages__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="messages__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: any</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[
