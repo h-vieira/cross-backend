@@ -30,6 +30,7 @@ export const createNewMessage = async (req, res)=> {
     try {
         const { text, date, image, author} = req.body;
         const newMessage = await Message.create({
+            _id: new mongoose.Types.ObjectId(),
             text, 
             date,
             image,
